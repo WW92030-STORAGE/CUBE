@@ -93,5 +93,3 @@ int main()
 
     return 0;
 }
-
-/* cd "c:\Users\WILLI\Documents\Miscellaneous\VSCODE\CUBE\" ; if ($?) { g++ main.cpp cross.cpp F2L.cpp OLL.cpp PLL.cpp -o main } ; if ($?) { .\main } */
