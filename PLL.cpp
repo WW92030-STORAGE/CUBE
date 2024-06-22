@@ -8,7 +8,9 @@ void Solver::aperm() {
 }
 
 void Solver::PLL() {
+	bool DEBUG = false;
     while (true) {
+	if (DEBUG) state.disp();
     int chestplates = 0; // Named after the crafting recipe for the aforementioned object in Minecraft.
     for (int i = 0; i < 4; i++) {
         if (state.FRONT[0][2] == state.FRONT[2][2]) {
@@ -27,7 +29,12 @@ void Solver::PLL() {
         continue;
     }
     
-    // There are either 0 1 or 4 chestplates.
+    // There are either 0 1 or 4 chestplates. The next case handles 4.
+
+	if (state.FRONT[1][2] == state.FRONT[2][2] && state.RIGHT[1][2] == state.RIGHT[2][2] && state.BACK[1][2] == state.BACK[2][2] && state.LEFT[1][2] == state.LEFT[2][2]) {
+		while (state.FRONT[1][2] != state.FRONT[1][1]) U();
+		return;
+	}
     
     if (state.FRONT[1][2] == state.BACK[2][2] && state.BACK[1][2] == state.FRONT[2][2] && state.LEFT[1][2] == state.RIGHT[2][2] && state.RIGHT[1][2] == state.LEFT[2][2]) {
         R(); R(); L(); L(); X(); X(); U();
