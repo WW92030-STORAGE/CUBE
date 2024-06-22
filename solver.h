@@ -18,47 +18,47 @@ class Solver {
     std::vector<int> moves;
     
     void F() {
-        state.F();
+        state.F_();
         moves.push_back(1);
     }
     
     void R() {
-        state.R();
+        state.R_();
         moves.push_back(2);
     }
     
     void U() {
-        state.U();
+        state.U_();
         moves.push_back(3);
     }
     
     void B() {
-        state.B();
+        state.B_();
         moves.push_back(4);
     }
     
     void L() {
-        state.L();
+        state.L_();
         moves.push_back(5);
     }
     
     void D() {
-        state.D();
+        state.D_();
         moves.push_back(6);
     }
     
     void X() {
-        state.X();
+        state.X_();
         moves.push_back(7);
     }
     
     void Y() {
-        state.Y();
+        state.Y_();
         moves.push_back(8);
     }
     
     void Z() {
-        state.Z();
+        state.Z_();
         moves.push_back(9);
     }
     
@@ -76,7 +76,7 @@ class Solver {
     void cross();
     
     void F2L();
-    
+
     void OLL();
     
     void PLL();
@@ -108,6 +108,7 @@ class Solver {
     }
     
     void solve(CubeState state2, bool verbose = false) {
+        moves.clear();
         original = CubeState(state2);
         state = CubeState(state2);
         
@@ -129,7 +130,7 @@ class Solver {
         
         PLL();
         
-        manage();
+        // manage();
     }
 };
 

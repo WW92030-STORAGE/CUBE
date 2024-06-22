@@ -119,7 +119,7 @@ class CubeState {
     // The two faces normal to the rotation axis are rotated directly. 
     // However since the axes are reversed for one of them both faces technically rotate in the same direction.
     
-    void X() {
+    void X_() {
         clockwise(RIGHT);
         clockwise(LEFT);
         
@@ -135,7 +135,7 @@ class CubeState {
         }
     }
     
-    void Y() {
+    void Y_() {
         clockwise(UP);
         clockwise(DOWN);
         
@@ -151,7 +151,7 @@ class CubeState {
         }
     }
     
-    void Z() {
+    void Z_() {
         clockwise(FRONT);
         clockwise(BACK);
         for (int x = 0; x < 3; x++) {
@@ -169,7 +169,7 @@ class CubeState {
     // Face rotations. Each face is rotated clockwise relative to looking at the face from the outside. (This means faces such as back are rotated inversely.)
     // Pieces on adjacent sides are also rotated
     
-    void F() {
+    void F_() {
         clockwise(FRONT);
         for (int x = 0; x < 3; x++) {
             int y = 0;
@@ -182,7 +182,7 @@ class CubeState {
         }
     }
     
-    void B() {
+    void B_() {
         counterclockwise(BACK);
         for (int x = 0; x < 3; x++) {
             int y = 2;
@@ -195,7 +195,7 @@ class CubeState {
         }
     }
     
-    void U() {
+    void U_() {
         clockwise(UP);
         for (int x = 0; x < 3; x++) {
             int y = 2;
@@ -208,7 +208,7 @@ class CubeState {
         }
     }
     
-    void D() {
+    void D_() {
         counterclockwise(DOWN);
         for (int x = 0; x < 3; x++) {
             int y = 0;
@@ -220,7 +220,7 @@ class CubeState {
         }
     }
     
-    void R() {
+    void R_() {
         clockwise(RIGHT);
         for (int y = 0; y < 3; y++) {
             int x = 2;
@@ -233,7 +233,7 @@ class CubeState {
         }
     }
     
-    void L() {
+    void L_() {
         counterclockwise(LEFT);
         for (int y = 0; y < 3; y++) {
             int x = 0;
@@ -326,15 +326,15 @@ class CubeState {
     void scramble(int moves = 256) {
         for (int i = 0; i < moves; i++) {
             int beep = randr(9);
-            if (beep == 0) F();
-            if (beep == 1) R();
-            if (beep == 2) U();
-            if (beep == 3) B();
-            if (beep == 4) L();
-            if (beep == 5) D();
-            if (beep == 6) X();
-            if (beep == 7) Y();
-            if (beep == 8) Z();
+            if (beep == 0) F_();
+            if (beep == 1) R_();
+            if (beep == 2) U_();
+            if (beep == 3) B_();
+            if (beep == 4) L_();
+            if (beep == 5) D_();
+            if (beep == 6) X_();
+            if (beep == 7) Y_();
+            if (beep == 8) Z_();
         }
     }
 };

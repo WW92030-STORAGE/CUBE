@@ -160,8 +160,7 @@ void Solver::F2L() {
                 } // End of not well placed corner calculation
             } // End of while true
                 
-            state.Y();
-            moves.push_back(7);
+            Y();
         } // End of main loop (4 iterations)
     }
 }
