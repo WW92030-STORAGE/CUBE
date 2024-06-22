@@ -5,4 +5,4 @@ This program is designed to run on a small amount of memory, so large graph sear
 
 # TODO (In no particular order)
 
-- Implement more special cases for F2L.
+- Implement more special cases and more optimized solutions for F2L.
