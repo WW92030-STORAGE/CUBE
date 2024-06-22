@@ -130,7 +130,7 @@ class Solver {
         
         PLL();
         
-        // manage();
+        manage();
     }
 };
 
