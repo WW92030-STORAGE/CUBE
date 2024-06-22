@@ -3,7 +3,7 @@
 #include <vector>
 
 void Solver::OLL() {
-	bool DEBUG = true;
+	bool DEBUG = false;
     Color c = state.UP[1][1];
     while (true) {
     std::vector<bool> correctly = state.edges(state.UP, c);
